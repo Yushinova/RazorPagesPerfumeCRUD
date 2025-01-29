@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+ï»¿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesPerfumeCRUD.Model;
@@ -17,7 +17,7 @@ namespace RazorPagesPerfumeCRUD.Pages.Perfumes
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            // ïîëó÷èòü ïàðôþì
+            // Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð¿Ð°Ñ€Ñ„ÑŽÐ¼
             Perfume? deleting = await _db.Perfumes.FirstOrDefaultAsync(i => i.Id == id);
             if (deleting == null)
             {
@@ -36,7 +36,7 @@ namespace RazorPagesPerfumeCRUD.Pages.Perfumes
             }
             _db.Perfumes.Remove(deleting);
             await _db.SaveChangesAsync();
-            // ðåäèðåêò
+            // Ñ€ÐµÐ´Ð¸Ñ€ÐµÐºÑ‚
             return RedirectToPage("/Perfumes/Perfume_List");
         }
     }

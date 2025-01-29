@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RazorPagesPerfumeCRUD.Model;
 
@@ -11,7 +11,7 @@ namespace RazorPagesPerfumeCRUD.Pages.Perfumes
         {
             _db = context;
         }
-        // объект сущности, связанный с параметрами запроса - т.е. с формой
+        // РѕР±СЉРµРєС‚ СЃСѓС‰РЅРѕСЃС‚Рё, СЃРІСЏР·Р°РЅРЅС‹Р№ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё Р·Р°РїСЂРѕСЃР° - С‚.Рµ. СЃ С„РѕСЂРјРѕР№
         [BindProperty]
         public Perfume PerfumeNew { get; set; } = new();
         public void OnGet()

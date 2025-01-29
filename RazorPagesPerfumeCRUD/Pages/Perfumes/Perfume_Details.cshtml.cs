@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesPerfumeCRUD.Model;
@@ -18,11 +18,11 @@ namespace RazorPagesPerfumeCRUD.Pages.Perfumes
             Perfume? perfume = await _db.Perfumes.FirstOrDefaultAsync(i => i.Id == id);
             if (perfume== null)
             {
-                // 404 страница
+                // 404 СЃС‚СЂР°РЅРёС†Р°
                 return NotFound();
             }
             PerfumeId = perfume;
-            // 200 + текущая страница
+            // 200 + С‚РµРєСѓС‰Р°СЏ СЃС‚СЂР°РЅРёС†Р°
             return Page();
         }
     }

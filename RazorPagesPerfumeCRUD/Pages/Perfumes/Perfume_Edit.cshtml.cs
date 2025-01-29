@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesPerfumeCRUD.Model;
@@ -19,24 +19,24 @@ namespace RazorPagesPerfumeCRUD.Pages.Perfumes
             Perfume? edit = await _db.Perfumes.FirstOrDefaultAsync(p => p.Id == id);
             if (edit == null)
             {
-                // 404 страница
+                // 404 СЃС‚СЂР°РЅРёС†Р°
                 return NotFound();
             }
             PerfumeEdit = edit;
-            // 200 + текущая страница
+            // 200 + С‚РµРєСѓС‰Р°СЏ СЃС‚СЂР°РЅРёС†Р°
             return Page();
 
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            // получить удаляемую запись
+            // РїРѕР»СѓС‡РёС‚СЊ СѓРґР°Р»СЏРµРјСѓСЋ Р·Р°РїРёСЃСЊ
             Perfume? edit = await _db.Perfumes.FirstOrDefaultAsync(i => i.Id == PerfumeEdit.Id);
             if (edit == null)
             {
-                // 404 страница
+                // 404 СЃС‚СЂР°РЅРёС†Р°
                 return NotFound();
             }
-            //обновление записи
+            //РѕР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё
             edit.Name = PerfumeEdit.Name;
             edit.Brand = PerfumeEdit.Brand;
             edit.Description = PerfumeEdit.Description;
@@ -46,7 +46,7 @@ namespace RazorPagesPerfumeCRUD.Pages.Perfumes
             edit.Price = PerfumeEdit.Price;
             edit.isSale = PerfumeEdit.isSale;
             await _db.SaveChangesAsync();
-            // в качестве результата выполнить перенаправление на список дел
+            // РІ РєР°С‡РµСЃС‚РІРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° РІС‹РїРѕР»РЅРёС‚СЊ РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РЅР° СЃРїРёСЃРѕРє РґРµР»
             return RedirectToPage("/Perfumes/Perfume_List");
         }
     }
