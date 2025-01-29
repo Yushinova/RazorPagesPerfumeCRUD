@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesPerfumeCRUD.Model;
@@ -12,7 +12,7 @@ namespace RazorPagesPerfumeCRUD.Pages.Perfumes
         {
             _db = context;
         }
-        // свойства модели страницы
+        // СЃРІРѕР№СЃС‚РІР° РјРѕРґРµР»Рё СЃС‚СЂР°РЅРёС†С‹
         public List<Perfume> Perfumes { get; private set; } = new();
         public async Task OnGetAsync()
         {
